@@ -58,4 +58,7 @@ def success(request):
     return render(request, 'login_registration_app/success.html')
 
 
-
+def wall(request):
+    if "userId" not in request.session:
+        return redirect('/')
+    return render(request, 'login_registration_app/wall.html')
